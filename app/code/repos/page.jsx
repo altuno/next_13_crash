@@ -5,7 +5,7 @@ async function fetchRepos() {
   const response = await fetch('https://api.github.com/users/altuno/repos');
 
   await new Promise((resolve) => {
-    setTimeout(resolve, 1000); // wait one second
+    setTimeout(resolve, 500); // wait 0.5 seconds
   });
 
   const repos = await response.json();
