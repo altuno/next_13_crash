@@ -3,6 +3,11 @@ import { FaCodeBranch, FaEye, FaStar } from 'react-icons/fa';
 
 async function fetchRepos() {
   const response = await fetch('https://api.github.com/users/altuno/repos');
+
+  await new Promise((resolve) => {
+    setTimeout(resolve, 1000); // wait one second
+  });
+
   const repos = await response.json();
   return repos;
 }
@@ -35,6 +40,7 @@ const ReposPage = async () => {
           </li>
         ))}
       </ul>
+      <h2>{repos[0].name}</h2>
     </div>
   );
 };
